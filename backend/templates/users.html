@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Users - TaskPilot{% endblock %}
+{% block eyebrow %}Admin{% endblock %}
+{% block page_title %}User Management{% endblock %}
+{% block content %}
+<section class="panel">
+  <div class="panel-head"><h2>Workspace users</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th><th></th></tr></thead><tbody id="usersTable"></tbody></table></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/tasks.js') }}"></script>{% endblock %}

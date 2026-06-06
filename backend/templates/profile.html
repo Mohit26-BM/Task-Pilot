@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Profile - TaskPilot{% endblock %}
+{% block eyebrow %}Settings{% endblock %}
+{% block page_title %}Profile Settings{% endblock %}
+{% block content %}
+<section class="panel narrow">
+  <div class="panel-head"><h2>Your profile</h2></div>
+  <form id="profileForm" class="stack-form">
+    <label>Name<input name="name" id="profileName" required></label>
+    <label>Email<input id="profileEmail" disabled></label>
+    <label>New password<input name="password" type="password" minlength="8" placeholder="Leave blank to keep current password"></label>
+    <button class="primary-btn">Save profile</button>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/tasks.js') }}"></script>{% endblock %}

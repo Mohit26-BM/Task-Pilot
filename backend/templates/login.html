@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in - TaskPilot</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+<body class="auth-body">
+  <div class="orb purple"></div>
+  <div class="orb blue"></div>
+
+  <main class="signup-layout">
+    <div class="auth-card">
+      <div class="auth-card-glow"></div>
+
+      <div class="brand">
+        <span class="brand-mark">
+          <img src="{{ url_for('static', filename='images/log01.png') }}" alt="Logo" style="height:2em;width:2em;object-fit:contain;border-radius:6px;display:block;">
+        </span>
+        <span>TaskPilot</span>
+      </div>
+
+      <h1>Welcome back</h1>
+      <p class="brand-story">Plan, track, and ship projects with your team.</p>
+
+      <form id="loginForm" class="auth-form">
+        <div class="input-wrap">
+          <span class="input-icon">
+            <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none"><path d="M3 5a2 2 0 012-2h10a2 2 0 012 2v.5l-7 4.5L3 5.5V5zm0 2.17V15a2 2 0 002 2h10a2 2 0 002-2V7.17l-7 4.5-7-4.5z" fill="#a5b4fc"/></svg>
+          </span>
+          <input name="email" type="email" autocomplete="email" required placeholder="Email address">
+          <span class="field-hint" id="loginEmailHint"></span>
+        </div>
+        <div class="input-wrap">
+          <span class="input-icon">
+            <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none"><path d="M5 9V7a5 5 0 1110 0v2h1a1 1 0 011 1v7a1 1 0 01-1 1H4a1 1 0 01-1-1v-7a1 1 0 011-1h1zm2-2a3 3 0 116 0v2H7V7zm-2 4v6h10v-6H5z" fill="#a5b4fc"/></svg>
+          </span>
+          <input name="password" type="password" autocomplete="current-password" required placeholder="Password">
+          <span class="input-eye" onclick="toggleEye(this)">
+            <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none"><path d="M10 4.5c-4.5 0-8 3.5-8 5.5s3.5 5.5 8 5.5 8-3.5 8-5.5-3.5-5.5-8-5.5zm0 9c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" fill="#a5b4fc"/></svg>
+          </span>
+        </div>
+        <button class="primary-btn" type="submit">Sign in</button>
+      </form>
+
+      <p class="auth-switch">New here? <a href="/signup">Create an account</a></p>
+
+      <div class="auth-footer">
+        <div class="security-indicator">
+          <svg width="1em" height="1em" viewBox="0 0 20 20" fill="none"><path d="M10 2l7 3v5c0 5.25-3.5 9.75-7 11-3.5-1.25-7-5.75-7-11V5l7-3z" fill="#10b981"/></svg>
+          Secure &amp; Encrypted
+        </div>
+        <div class="auth-links"><a href="#">Terms</a> · <a href="#">Privacy</a></div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toastHost" class="toast-host"></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+  <script>
+    function toggleEye(btn) {
+      const input = btn.previousElementSibling;
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>

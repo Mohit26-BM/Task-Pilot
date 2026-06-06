@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - TaskPilot{% endblock %}
+{% block eyebrow %}Analytics{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+{% block content %}
+<div class="stats-grid" id="statsGrid">
+  <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>
+</div>
+<div class="chart-grid">
+  <section class="panel"><div class="panel-head"><h2>Status Distribution</h2></div><div class="chart"><canvas id="statusChart"></canvas></div></section>
+  <section class="panel"><div class="panel-head"><h2>Priority Mix</h2></div><div class="chart"><canvas id="priorityChart"></canvas></div></section>
+  <section class="panel wide"><div class="panel-head"><h2>Tasks Per Project</h2></div><div class="chart"><canvas id="projectChart"></canvas></div></section>
+  <section class="panel wide"><div class="panel-head"><h2>Completed Over Time</h2></div><div class="chart"><canvas id="timelineChart"></canvas></div></section>
+</div>
+<section class="panel">
+  <div class="panel-head"><h2>Recent Activity</h2></div>
+  <div id="recentTasks" class="activity-list"></div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Tasks - TaskPilot{% endblock %}
+{% block eyebrow %}Work queue{% endblock %}
+{% block page_title %}Tasks{% endblock %}
+{% block content %}
+<div class="toolbar">
+  <div class="filter-row">
+    <input id="taskSearch" placeholder="Search tasks">
+    <select id="statusFilter"><option value="">All statuses</option><option>Pending</option><option>In Progress</option><option>Review</option><option>Completed</option></select>
+    <select id="priorityFilter"><option value="">All priorities</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select>
+    <select id="projectFilter"><option value="">All projects</option></select>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div class="view-toggle">
+      <button class="view-btn" data-view="grid" title="List view">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        List
+      </button>
+      <button class="view-btn" data-view="kanban" title="Kanban board">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="12" rx="1"/><rect x="17" y="3" width="5" height="15" rx="1"/></svg>
+        Board
+      </button>
+    </div>
+    <button class="primary-btn admin-only" id="newTaskBtn">+ New task</button>
+  </div>
+</div>
+<div id="taskGrid" class="task-grid"></div>
+<div id="kanbanBoard" class="kanban-board" style="display:none;"></div>
+<dialog id="taskModal" class="modal">
+  <form method="dialog" class="modal-card" id="taskForm">
+    <div class="panel-head"><h2 id="taskModalTitle">Task</h2><button type="button" class="icon-btn" onclick="document.getElementById('taskModal').close()">×</button></div>
+    <input type="hidden" name="id">
+    <label>Title<input name="title" required></label>
+    <label>Description<textarea name="description" rows="3"></textarea></label>
+    <div class="two-col">
+      <label>Project<select name="project_id" required></select></label>
+      <label>Assignee<select name="assigned_to"></select></label>
+      <label>Status<select name="status"><option>Pending</option><option>In Progress</option><option>Review</option><option>Completed</option></select></label>
+      <label>Priority<select name="priority"><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
+      <label>Type<select name="task_type"><option>Bug</option><option>Feature</option><option>Improvement</option><option>Documentation</option><option>Research</option></select></label>
+      <label>Due date<input type="date" name="due_date"></label>
+    </div>
+    <div class="modal-actions"><button type="button" class="ghost-btn" onclick="document.getElementById('taskModal').close()">Cancel</button><button class="primary-btn">Save task</button></div>
+  </form>
+</dialog>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.3/Sortable.min.js"></script>
+<script src="{{ url_for('static', filename='js/tasks.js') }}"></script>
+{% endblock %}

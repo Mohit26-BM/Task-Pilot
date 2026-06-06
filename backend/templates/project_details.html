@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Project - TaskPilot{% endblock %}
+{% block eyebrow %}Project{% endblock %}
+{% block page_title %}<span id="projectTitle">Project</span>{% endblock %}
+{% block content %}
+<input type="hidden" id="projectId" value="{{ project_id }}">
+<section class="panel project-hero">
+  <p id="projectDescription" class="muted"></p>
+  <div id="projectMembers" class="avatar-row"></div>
+  <div class="filter-row admin-only" style="margin-top:16px">
+    <select id="memberSelect"></select>
+    <button class="ghost-btn" id="addMemberBtn">Add member</button>
+  </div>
+</section>
+<div class="toolbar"><button class="primary-btn admin-only" id="newTaskBtn">New task</button></div>
+<div id="projectTaskGrid" class="task-grid"></div>
+{% include "task_modal.html" ignore missing %}
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/tasks.js') }}"></script>{% endblock %}

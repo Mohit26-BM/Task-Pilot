@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Projects - TaskPilot{% endblock %}
+{% block eyebrow %}Portfolio{% endblock %}
+{% block page_title %}Projects{% endblock %}
+{% block content %}
+<div class="toolbar">
+  <div class="filter-row"><input id="projectSearch" placeholder="Search projects"></div>
+  <button class="primary-btn admin-only" id="newProjectBtn">New project</button>
+</div>
+<div id="projectsGrid" class="project-grid"></div>
+<dialog id="projectModal" class="modal">
+  <form method="dialog" class="modal-card" id="projectForm">
+    <div class="panel-head"><h2 id="projectModalTitle">Project</h2><button type="button" class="icon-btn" onclick="document.getElementById('projectModal').close()">×</button></div>
+    <input type="hidden" name="id">
+    <label>Title<input name="title" required></label>
+    <label>Description<textarea name="description" rows="4"></textarea></label>
+    <div class="modal-actions"><button type="button" class="ghost-btn" onclick="document.getElementById('projectModal').close()">Cancel</button><button class="primary-btn">Save</button></div>
+  </form>
+</dialog>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/tasks.js') }}"></script>{% endblock %}

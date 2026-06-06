@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskPilot — Ship projects faster with your team</title>
+  <meta name="description" content="TaskPilot brings tasks, projects, and your team together in one place. Plan, track, and deliver without the chaos.">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+</head>
+<body>
+
+  <!-- ===== Nav ===== -->
+  <nav class="lp-nav" id="lpNav">
+    <div class="lp-nav-inner">
+      <a class="lp-brand" href="/">
+        <span class="lp-brand-mark">
+          <img src="{{ url_for('static', filename='images/log01.png') }}" alt="TaskPilot" style="height:2em;width:2em;object-fit:contain;border-radius:6px;">
+        </span>
+        <span>TaskPilot</span>
+      </a>
+      <div class="lp-nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+      </div>
+      <div class="lp-nav-actions">
+        <a href="/login" class="lp-ghost-btn">Sign in</a>
+        <a href="/signup" class="lp-primary-btn">Get started free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <section class="lp-hero">
+    <div class="lp-hero-bg">
+      <div class="lp-orb lp-orb-1"></div>
+      <div class="lp-orb lp-orb-2"></div>
+      <div class="lp-orb lp-orb-3"></div>
+    </div>
+    <div class="lp-hero-inner">
+      <!-- Left: copy -->
+      <div class="lp-hero-content">
+        <div class="lp-badge">Built for modern teams</div>
+        <h1 class="lp-hero-title">Ship projects<br>faster with<br>your team</h1>
+        <p class="lp-hero-sub">TaskPilot brings tasks, projects, and your team together in one place. Plan, track, and deliver — without the chaos.</p>
+        <div class="lp-hero-actions">
+          <a href="/signup" class="lp-primary-btn lp-btn-lg">
+            Get started free
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/login" class="lp-ghost-btn lp-btn-lg">Sign in</a>
+        </div>
+        <p class="lp-hero-note">No credit card required &nbsp;·&nbsp; Free for teams</p>
+      </div>
+
+      <!-- Right: mockup -->
+      <div class="lp-hero-visual">
+        <div class="lp-mockup">
+          <div class="lp-mockup-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="lp-mockup-body">
+            <div class="lp-mock-sidebar">
+              <div class="lp-mock-logo"></div>
+              <div class="lp-mock-nav-item active"></div>
+              <div class="lp-mock-nav-item"></div>
+              <div class="lp-mock-nav-item"></div>
+              <div class="lp-mock-nav-item"></div>
+            </div>
+            <div class="lp-mock-main">
+              <div class="lp-mock-topbar">
+                <div class="lp-mock-title"></div>
+                <div class="lp-mock-btn"></div>
+              </div>
+              <div class="lp-mock-cards">
+                <div class="lp-mock-card">
+                  <div class="lp-card-dot dot-blue"></div>
+                  <div class="lp-card-line short"></div>
+                  <div class="lp-card-line long"></div>
+                  <div class="lp-card-pills">
+                    <div class="lp-card-pill pill-purple"></div>
+                    <div class="lp-card-pill pill-green"></div>
+                  </div>
+                </div>
+                <div class="lp-mock-card">
+                  <div class="lp-card-dot dot-red"></div>
+                  <div class="lp-card-line medium"></div>
+                  <div class="lp-card-line short"></div>
+                  <div class="lp-card-pills">
+                    <div class="lp-card-pill pill-red"></div>
+                    <div class="lp-card-pill pill-blue"></div>
+                  </div>
+                </div>
+                <div class="lp-mock-card">
+                  <div class="lp-card-dot dot-green"></div>
+                  <div class="lp-card-line long"></div>
+                  <div class="lp-card-line medium"></div>
+                  <div class="lp-card-pills">
+                    <div class="lp-card-pill pill-green"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="lp-mock-stats">
+                <div class="lp-mock-stat"></div>
+                <div class="lp-mock-stat"></div>
+                <div class="lp-mock-stat"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating status badges -->
+        <div class="lp-float-badge lp-float-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Task completed
+        </div>
+        <div class="lp-float-badge lp-float-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Sprint on track
+        </div>
+        <div class="lp-float-badge lp-float-3">
+          <div class="lp-avatars">
+            <div class="lp-avatar-mini">A</div>
+            <div class="lp-avatar-mini">J</div>
+            <div class="lp-avatar-mini">K</div>
+          </div>
+          <span>Team synced</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Features ===== -->
+  <section class="lp-features" id="features">
+    <div class="lp-section-inner">
+      <div class="lp-section-head reveal">
+        <div class="lp-badge">Features</div>
+        <h2>Everything your team needs</h2>
+        <p>A complete toolkit to plan, execute, and ship — without juggling a dozen separate apps.</p>
+      </div>
+      <div class="lp-features-grid">
+        <div class="lp-feat-card reveal">
+          <div class="lp-feat-icon lp-icon-purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+          </div>
+          <h3>Project Management</h3>
+          <p>Organise all your work into projects. Track progress with visual indicators and keep every stakeholder in the loop.</p>
+        </div>
+        <div class="lp-feat-card reveal">
+          <div class="lp-feat-icon lp-icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h3>Task Tracking</h3>
+          <p>Create tasks, set priorities, assign due dates, and move them through your workflow as progress happens.</p>
+        </div>
+        <div class="lp-feat-card reveal">
+          <div class="lp-feat-icon lp-icon-green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Team Collaboration</h3>
+          <p>Assign tasks to teammates, manage roles, and see who owns what across every project in your workspace.</p>
+        </div>
+        <div class="lp-feat-card reveal">
+          <div class="lp-feat-icon lp-icon-amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="12" rx="1"/><rect x="17" y="3" width="5" height="15" rx="1"/></svg>
+          </div>
+          <h3>Kanban Board</h3>
+          <p>Switch between list and board view. Drag tasks between Pending, In Progress, Review, and Completed in one click.</p>
+        </div>
+        <div class="lp-feat-card reveal">
+          <div class="lp-feat-icon lp-icon-pink">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Live Dashboard</h3>
+          <p>Get a birds-eye view of all activity — task completion rates, team workload, and project health at a glance.</p>
+        </div>
+        <div class="lp-feat-card reveal">
+          <div class="lp-feat-icon lp-icon-indigo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Role-Based Access</h3>
+          <p>Admins manage the workspace; members focus on their tasks. Secure, JWT-authenticated access throughout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== How it works ===== -->
+  <section class="lp-how" id="how">
+    <div class="lp-section-inner">
+      <div class="lp-section-head reveal">
+        <div class="lp-badge">How it works</div>
+        <h2>Up and running in minutes</h2>
+        <p>No onboarding calls. No complex setup. Create an account and start shipping today.</p>
+      </div>
+      <div class="lp-steps">
+        <div class="lp-step reveal">
+          <div class="lp-step-num">1</div>
+          <div class="lp-step-content">
+            <h3>Create your workspace</h3>
+            <p>Sign up free and get instant access. Create your first project and set up your team in seconds.</p>
+          </div>
+        </div>
+        <div class="lp-step-connector"></div>
+        <div class="lp-step reveal">
+          <div class="lp-step-num">2</div>
+          <div class="lp-step-content">
+            <h3>Add tasks and assign them</h3>
+            <p>Break work into tasks, set priorities and due dates, and assign each one to the right team member.</p>
+          </div>
+        </div>
+        <div class="lp-step-connector"></div>
+        <div class="lp-step reveal">
+          <div class="lp-step-num">3</div>
+          <div class="lp-step-content">
+            <h3>Track progress and ship</h3>
+            <p>Drag tasks through the kanban board and watch the dashboard fill up as your team delivers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="lp-cta">
+    <div class="lp-hero-bg">
+      <div class="lp-orb lp-orb-cta-1"></div>
+      <div class="lp-orb lp-orb-cta-2"></div>
+    </div>
+    <div class="lp-cta-inner reveal">
+      <div class="lp-badge">Get started today</div>
+      <h2>Ready to get your team organised?</h2>
+      <p>Join teams already using TaskPilot to ship faster and stress less.</p>
+      <a href="/signup" class="lp-primary-btn lp-btn-lg">
+        Get started free
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="lp-footer">
+    <div class="lp-footer-inner">
+      <a class="lp-brand" href="/">
+        <span class="lp-brand-mark">
+          <img src="{{ url_for('static', filename='images/log01.png') }}" alt="TaskPilot" style="height:2em;width:2em;object-fit:contain;border-radius:6px;">
+        </span>
+        <span>TaskPilot</span>
+      </a>
+      <p class="lp-footer-copy">© 2025 TaskPilot. Built for productive teams.</p>
+      <div class="lp-footer-links">
+        <a href="/login">Sign in</a>
+        <a href="/signup">Sign up</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toastHost" class="toast-host"></div>
+
+  <script>
+    // Redirect already-authenticated users straight to dashboard
+    try {
+      if (localStorage.getItem('tp_token')) {
+        location.replace('/dashboard');
+      }
+    } catch(e) {}
+
+    // Sticky nav on scroll
+    const nav = document.getElementById('lpNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    // Scroll-reveal with stagger for feature cards
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    // Stagger feature cards and steps
+    let cardDelay = 0;
+    document.querySelectorAll('.lp-feat-card.reveal').forEach(el => {
+      el.style.transitionDelay = (cardDelay * 0.07) + 's';
+      cardDelay++;
+    });
+    let stepDelay = 0;
+    document.querySelectorAll('.lp-step.reveal').forEach(el => {
+      el.style.transitionDelay = (stepDelay * 0.12) + 's';
+      stepDelay++;
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
