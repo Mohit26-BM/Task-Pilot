@@ -42,7 +42,8 @@ def create_app():
 
     @app.route("/login")
     def login_page():
-        return render_template("login.html")
+        return render_template("login.html",
+            admin_pwd=os.getenv("ADMIN_PASSWORD", "Admin@12345"))
 
     @app.route("/signup")
     def signup_page():
