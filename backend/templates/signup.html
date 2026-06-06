@@ -6,6 +6,7 @@
   <title>Sign up - TaskPilot</title>
   <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -30,6 +31,14 @@
         </span>
         <span>TaskPilot</span>
       </div>
+
+      <lottie-player
+        src="{{ url_for('static', filename='a515be50-1176-11ee-9281-d3ab445e67dc.json') }}"
+        background="transparent"
+        speed="0.8"
+        loop autoplay
+        style="width:150px;height:150px;margin:0 auto 4px;">
+      </lottie-player>
 
       <h1>Create account</h1>
       <p class="brand-story">Join your team's workspace and start shipping.</p>

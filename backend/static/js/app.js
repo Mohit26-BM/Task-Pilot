@@ -15,7 +15,7 @@ async function api(path, options = {}) {
   const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
   if (store.token) headers.Authorization = `Bearer ${store.token}`;
   const res = await fetch(path, { ...options, headers });
-  if (res.status === 401) {
+  if (res.status === 401 && path !== "/login" && path !== "/signup") {
     store.clear();
     flash("Your session has expired. Please sign in again.", "error");
     location.href = "/login";
