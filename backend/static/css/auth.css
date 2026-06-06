@@ -87,6 +87,15 @@
 }
 .auth-card > * { position: relative; z-index: 1; }
 
+/* ===== Back link ===== */
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: #64748b;
+  text-decoration: none; margin-bottom: 22px;
+  transition: color .15s, gap .15s;
+}
+.back-link:hover { color: #a5b4fc; gap: 9px; }
+
 /* ===== Brand ===== */
 .brand {
   display: flex;
@@ -220,6 +229,38 @@ h1 {
   filter: brightness(1.08);
   transform: translateY(-1px);
 }
+
+/* ===== Demo login buttons ===== */
+.demo-row { margin-top: 14px; }
+.demo-divider {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.73rem; color: #475569; margin-bottom: 10px;
+}
+.demo-divider::before, .demo-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: rgba(255,255,255,.06);
+}
+.demo-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.demo-btn {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 9px 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  color: #cbd5e1; font-size: 0.82rem; font-weight: 700;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, transform .12s;
+}
+.demo-btn:hover {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.14);
+  transform: translateY(-1px);
+}
+.demo-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+}
+.dot-admin  { background: #8b5cf6; box-shadow: 0 0 6px rgba(139,92,246,.6); }
+.dot-member { background: #10b981; box-shadow: 0 0 6px rgba(16,185,129,.6); }
 
 /* ===== Switch & footer ===== */
 .auth-switch {

@@ -74,19 +74,25 @@ def create_app():
 
     with app.app_context():
         db.create_all()
-        seed_admin()
+        seed_demo_accounts()
 
     return app
 
 
-def seed_admin():
-    if User.query.first():
-        return
-    password = os.getenv("ADMIN_PASSWORD", "Admin@12345")
-    admin = User(name="TaskPilot Admin", email="admin@taskpilot.dev", role="Admin")
-    admin.set_password(password)
-    db.session.add(admin)
-    db.session.commit()
+def seed_demo_accounts():
+    changed = False
+    if not User.query.filter_by(email="admin@taskpilot.dev").first():
+        admin = User(name="TaskPilot Admin", email="admin@taskpilot.dev", role="Admin")
+        admin.set_password(os.getenv("ADMIN_PASSWORD", "Admin@12345"))
+        db.session.add(admin)
+        changed = True
+    if not User.query.filter_by(email="member@taskpilot.dev").first():
+        member = User(name="Demo Member", email="member@taskpilot.dev", role="Member")
+        member.set_password("Member@12345")
+        db.session.add(member)
+        changed = True
+    if changed:
+        db.session.commit()
 
 
 app = create_app()
