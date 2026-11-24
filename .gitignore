@@ -38,3 +38,10 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# local-only
+_local/
+CLAUDE.md
+AGENTS.md
+.claude/
+.pytest_cache/

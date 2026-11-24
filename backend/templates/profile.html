@@ -8,7 +8,8 @@
   <form id="profileForm" class="stack-form">
     <label>Name<input name="name" id="profileName" required></label>
     <label>Email<input id="profileEmail" disabled></label>
-    <label>New password<input name="password" type="password" minlength="8" placeholder="Leave blank to keep current password"></label>
+    <label>Current password<input name="current_password" type="password" autocomplete="current-password" placeholder="Only needed to set a new password"></label>
+    <label>New password<input name="password" autocomplete="new-password" type="password" minlength="8" placeholder="Leave blank to keep current password"></label>
     <button class="primary-btn">Save profile</button>
   </form>
 </section>

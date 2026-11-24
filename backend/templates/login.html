@@ -63,19 +63,17 @@
         <button class="primary-btn" type="submit">Sign in</button>
       </form>
 
+      {% if demo %}
       <div class="demo-row">
-        <p class="demo-divider">or try a demo account</p>
+        <p class="demo-divider">or try the demo account</p>
         <div class="demo-btns">
-          <button type="button" class="demo-btn" onclick="fillDemo('admin@taskpilot.dev','{{ admin_pwd }}')">
-            <span class="demo-dot dot-admin"></span>
-            Admin
-          </button>
-          <button type="button" class="demo-btn" onclick="fillDemo('member@taskpilot.dev','Member@12345')">
+          <button type="button" class="demo-btn" id="demoMember" data-email="{{ demo_email }}" data-password="{{ demo_password }}">
             <span class="demo-dot dot-member"></span>
-            Member
+            Demo Member
           </button>
         </div>
       </div>
+      {% endif %}
 
       <p class="auth-switch">New here? <a href="/signup">Create an account</a></p>
 
@@ -97,10 +95,14 @@
       const input = btn.previousElementSibling;
       input.type = input.type === "password" ? "text" : "password";
     }
-    function fillDemo(email, password) {
-      document.querySelector('[name="email"]').value = email;
-      document.querySelector('[name="password"]').value = password;
-      document.getElementById('loginForm').requestSubmit();
+    // The demo button exists only when the server runs with DEMO_MODE=1, and fills in a shared Member account.
+    const demoButton = document.getElementById('demoMember');
+    if (demoButton) {
+      demoButton.addEventListener('click', function () {
+        document.querySelector('[name="email"]').value = demoButton.dataset.email;
+        document.querySelector('[name="password"]').value = demoButton.dataset.password;
+        document.getElementById('loginForm').requestSubmit();
+      });
     }
   </script>
 </body>

@@ -403,9 +403,13 @@ async function loadProfile() {
     if (payload.password && scorePasswordLocal(payload.password) < 5) {
       toast("Please use a stronger password.", "error"); return;
     }
+    if (payload.password && !payload.current_password) {
+      toast("Enter your current password to set a new one.", "error"); return;
+    }
     try {
       const updated = await api("/profile", { method: "PUT", body: JSON.stringify(payload) });
       store.setSession(store.token, updated);
+      form.querySelectorAll('input[type="password"]').forEach((input) => { input.value = ""; });
       toast("Profile updated");
     } catch (e) { toast(e.message, "error"); }
   });
